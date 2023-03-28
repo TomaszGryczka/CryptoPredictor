@@ -1,0 +1,54 @@
+\documentclass[a4paper,11pt]{article}
+
+\usepackage[T1]{polski}
+\usepackage[utf8]{inputenc}
+
+\usepackage{listings}
+\usepackage{hyperref}
+
+\usepackage{float}
+\usepackage{svg}
+
+\lstset{
+        basicstyle=\tt,
+        literate={~}{{\fontfamily{ptm}\selectfont \textasciitilde}}1
+}
+
+\hoffset=-3.0cm
+\textwidth=18cm
+\evensidemargin=0pt
+
+\voffset=-3cm
+\textheight=27cm
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{\medskipamount}
+\raggedbottom
+
+\newcommand\BS{\char`\\}
+\newcommand\TY{\raise.17ex\hbox{$\scriptstyle\mathtt{\sim}$}}
+
+\title{Projekt dyplomowy \\ Predykcja kursów na giełdzie kryptowalut z wykorzystaniem sztucznych sieci neuronowych}
+\author{Tomasz Gryczka, 311341}
+
+
+\begin{document}
+
+\maketitle
+
+\section{Cel projektu}
+Celem projektu jest prognozowanie kursu jednej z najpopularniejszych kryptowalut - Bitcoin'a. W tym celu wykorzystane zostaną sztuczne sieci neuronowe. Pośrednim celem (jeśli starczy czasu) jest też porównanie dwóch typów sieci neuronowych: rekurencyjnych oraz transformerów. W trakcie pracy postaram też odpowiedzieć na pytanie, czy dzięki wykorzystaniu uczenia maszynowego jesteśmy w stanie osiągnąć lepsze wyniki w porównaniu do tradycyjnych metod inwestowania / spekulacji.
+\section{Wykorzystane narzędzia}
+Do wykonania powyższych zadań zostanie użyty język programowania \textbf{Python}. W obecnej chwili istnieją dwa najpopularniejsze frameworki przeznaczone dla sztucznych sieci neuronowych: TensorFlow i PyTorch. W trakcie pracy użyty zostanie \textbf{PyTorch}, który według Google Trends przebił już popularnością TensorFlow i wydaje się być bardziej przyszłościowym rozwiązaniem. Biblioteki \textbf{Pandas}, \textbf{Numpy} oraz \textbf{Scikit-learn} będą podstawowymi narzędziami pomocnymi w przetwarzaniu danych dotyczących historycznych kursów kryptowaluty i wygenerowanych prognoz.
+
+Jak już zostało wcześniej wspomniane celem projektu jest porównanie dwóch typów sieci: rekurencyjnych (tutaj zastosowana zostanie sieć \textbf{LSTM}) oraz transformerów. Główny nacisk będzie kładziony na sieć rekurencyjną.
+
+Wykorzystane zostaną ogólnodostępne źródła historycznych i aktualnych kursów kryptowaluty. Przykładowym źródłem są:
+\begin{itemize}
+  \item \href{https://finance.yahoo.com/quote/BTC-USD/history?period1=1410912000&period2=1679961600&interval=1d&filter=history&frequency=1d&includeAdjustedClose=true}{Yahoo! Finance},
+  \item \href{https://www.investing.com/crypto/bitcoin/historical-data}{investing.com}.
+\end{itemize}
+
+W trakcie pracy prawdopodobnie zostanie wykorzystane środowisko Google Colab. Wszystkie efekty pracy będą trzymane w \href{https://github.com/TomaszGryczka/CryptoPredictor}{repozytorium GitHub}.
+
+\end{document}
