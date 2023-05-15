@@ -14,10 +14,6 @@ __pycache__/
 dist/
 build/
 
-# Jupyter Notebook
-.ipynb_checkpoints/
-*.ipynb
-
 # Virtual environment
 venv/
 .env/
